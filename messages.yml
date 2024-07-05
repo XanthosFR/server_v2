@@ -1,0 +1,451 @@
+#########################################################################################
+#                                                                                       #
+# UltimateAutoRestart, un recurso gratuito de Norska @ https://norska.dev               #
+#                                                                                       #
+# Wiki: https://norska.dev/docs/welcome/                                                #
+# Soporte: https://norska.dev/discord/                                                  #
+#                                                                                       #
+# Estás editando el archivo messages.yml de UltimateAutoRestart.                        #
+#                                                                                       #
+#########################################################################################
+
+#########################################################################################
+#                                                                                       #
+# NOTA: ¡POR FAVOR LEER ANTES DE CONFIGURAR!                                            #
+#                                                                                       #
+# Si PlaceholderAPI está instalado, puedes usar cualquier placeholder dentro de los     #
+# mensajes, asegúrate de instalar correctamente cualquier extensión usando /papi ecloud.#
+#                                                                                       #
+# Los placeholders que están dentro de {} (e.g {0}, {1}) son placeholders internos.     #
+# Para usar los placeholders de PAPI, úsalos normalmente, como %player_gamemode%, etc.  #
+#                                                                                       #
+# Ámbitos:                                                                              #
+# 1) Global -> Todos los jugadores en línea recibirán el mensaje.                       #
+# 2) Usuario -> El usuario que ejecutó comandos/eventos recibirá el mensaje.            #
+# 3) Limitado -> Solo los usuarios/sistemas con permisos específicos recibirán el mensaje. #
+#                                                                                       #
+# Nota: Los ámbitos son por mensaje y no pueden ser alterados manualmente.              #
+#                                                                                       #
+#########################################################################################     
+
+# Nota: Si se deben quitar los colores de los mensajes mostrados en la consola (para mostrar problemas con algunos paneles).
+stripConsole: false
+
+messages:
+
+   # Nota: ¡Usa {PREFIX} &f» en cualquier mensaje para agregar el siguiente prefijo!
+   prefix: "<GRADIENT:9483FF>&lUltimateAutoRestart</GRADIENT:FB9AF2>&r"
+
+   EVENT_INTERVAL_GLOBAL:
+   # Placeholders: {0} = intervalo
+   # Ámbito: Global
+      chatMessage:
+         enabled: false
+         centered: false
+         content: 
+         - ''
+         - '{PREFIX} &f» &fReiniciando en &d{0}&f!'
+         - ''
+      actionbar:
+         enabled: true
+         content: '{PREFIX} &f» &fReiniciando en &d{0}&f!' 
+      titles:
+         enabled: false
+         titleContent: '{PREFIX}' 
+         subtitleContent: '&fReiniciando en &d{0}&f!'
+         
+   EVENT_INTERVAL_CONSOLE:
+   # Placeholders: {0} = intervalo
+   # Ámbito: Limitado -> Solo consola
+      chatMessage:
+         enabled: true
+         centered: false
+         content: 
+         - '{PREFIX} &f» &fReiniciando en &d{0}&f!'
+         
+   EVENT_RESTART_GLOBAL:
+   # Placeholders: Ninguno
+   # Ámbito: Global
+      chatMessage:
+         enabled: false
+         centered: false
+         content: 
+         - ''
+         - '{PREFIX} &f» &fReiniciando... ¡vuelve pronto!'
+         - ''
+      actionbar:
+         enabled: true
+         content: '{PREFIX} &f» &fReiniciando... ¡vuelve pronto!'
+      titles:
+         enabled: false
+         titleContent: '{PREFIX}' 
+         subtitleContent: '&fReiniciando... ¡vuelve pronto!'
+         
+   EVENT_RESTART_DELAY_GLOBAL:
+   # Placeholders: {0} = intervalo
+   # Ámbito: Global
+      chatMessage:
+         enabled: false
+         centered: false
+         content: 
+         - ''
+         - '{PREFIX} &f» &fEl reinicio se ha retrasado por &d{0}&f!'
+         - ''
+      actionbar:
+         enabled: true
+         content: '{PREFIX} &f» &fEl reinicio se ha retrasado por &d{0}&f!'
+      titles:
+         enabled: false
+         titleContent: '{PREFIX}' 
+         subtitleContent: '&fEl reinicio se ha retrasado por &d{0}&f!'
+         
+   EVENT_RESTART_DELAY_STAFF:
+   # Placeholders: {0} = intervalo
+   # Ámbito: Limitado -> uar.notifydelay
+      chatMessage:
+         enabled: false
+         centered: false
+         content: 
+         - ''
+         - '{PREFIX} &f» &fEl reinicio se ha retrasado por &d{0}&f!'
+         - ''
+      actionbar:
+         enabled: true
+         content: '&c(Staff) {PREFIX} &f» &fEl reinicio se ha retrasado por &d{0}&f!'   
+      titles:
+         enabled: false
+         titleContent: '{PREFIX}' 
+         subtitleContent: '&fEl reinicio se ha retrasado por &d{0}&f!'
+
+   ############################### 
+      
+   COMMAND_USER_VIEWINTERVAL:
+   # Placeholders: {0} = intervalo, {1} = tiempo desde el último reinicio
+   # Ámbito: Usuario
+      chatMessage:
+         enabled: true
+         centered: true
+         content: 
+         - ''
+         - '{PREFIX} &f» &fReiniciando en &d{0}&f!'
+         - '&7&o(El último reinicio ocurrió hace {1})'
+         - ''
+      actionbar:
+         enabled: false
+         content: '{PREFIX} &f» &fReiniciando en &d{0}&f!'    
+      titles:
+         enabled: false
+         titleContent: '{PREFIX}' 
+         subtitleContent: '&fReiniciando en &d{0}&f!'
+         
+   ###############################  
+      
+   COMMAND_FORCE_RESTART:
+   # Placeholders: {0} = intervalo
+   # Ámbito: Usuario
+      chatMessage:
+         enabled: true
+         centered: false
+         content: 
+         - ''
+         - '{PREFIX} &f» &fForzando el reinicio. Reiniciando en &d{0}&f!'
+         - ''
+      actionbar:
+         enabled: false
+         content: '{PREFIX} &f» &fForzando el reinicio. &fReiniciando en &d{0}&f!' 
+      titles:
+         enabled: false
+         titleContent: '{PREFIX}' 
+         subtitleContent: '&fForzando el reinicio. Reiniciando en &d{0}&f!'
+         
+   COMMAND_FORCE_RESTART_GLOBAL:
+   # Placeholders: {0} = intervalo, {1} = usuario que forzó el reinicio
+   # Ámbito: Global
+      chatMessage:
+         enabled: true
+         centered: false
+         content: 
+         - ''
+         - '{PREFIX} &f» &c{1} &fforzó un reinicio. &fReiniciando en &d{0}&f!' 
+         - ''
+      actionbar:
+         enabled: false
+         content: '{PREFIX} &f» &c{1} &fforzó un reinicio. &fReiniciando en &d{0}&f!' 
+      titles:
+         enabled: false
+         titleContent: '{PREFIX}' 
+         subtitleContent: '&fReiniciando en &d{0}&f!'
+         
+   COMMAND_FORCE_RESTART_WITH_REASON:
+   # Placeholders: {0} = intervalo
+   # Ámbito: Usuario
+      chatMessage:
+         enabled: true
+         centered: false
+         content: 
+         - ''
+         - '{PREFIX} &f» &fForzando el reinicio con razón. Reiniciando en &d{0}&f!'
+         - ''
+      actionbar:
+         enabled: false
+         content: '{PREFIX} &f» &fForzando el reinicio con razón. &fReiniciando en &d{0}&f!' 
+      titles:
+         enabled: false
+         titleContent: '{PREFIX}' 
+         subtitleContent: '&fForzando el reinicio con razón. Reiniciando en &d{0}&f!'
+         
+   COMMAND_FORCE_RESTART_GLOBAL_WITH_REASON:
+   # Placeholders: {0} = intervalo, {1} = usuario que forzó el reinicio, {2} = razón
+   # Ámbito: Global
+      chatMessage:
+         enabled: true
+         centered: true
+         content: 
+         - ''
+         - '{PREFIX} &f» &c{1} &fforzó un reinicio. &fReiniciando en &d{0}&f!' 
+         - '&7&oRazón:&r {2}' 
+         - ''
+      actionbar:
+         enabled: false
+         content: '{PREFIX} &f» &c{1} &fforzó un reinicio. &fReiniciando en &d{0}&f! &7&oRazón:&r {2}' 
+      titles:
+         enabled: false
+         titleContent: '{PREFIX}' 
+         subtitleContent: '&fReiniciando en &d{0}&f! &7&o(&r{2}&7&o)'         
+         
+   COMMAND_FORCE_RESTART_INVALID:
+   # Placeholders: {0} = entrada
+   # Ámbito: Usuario
+      chatMessage:
+         enabled: true
+         centered: false
+         content: 
+         - ''
+         - ' {PREFIX} &f» &fNo se pudo forzar el reinicio porque tu argumento de intervalo es incorrecto!'
+         - ''
+         - '  &dDetalles:'
+         - '  &7• &dTu argumento: &f{0}'
+         - '  &7• &dArgumento esperado: &fEntero positivo (e.g 60)'
+         - ''
+      actionbar:
+         enabled: false
+         content: '{PREFIX} &f» &fNo se pudo forzar el reinicio porque tu argumento de intervalo es incorrecto!'
+      titles:
+         enabled: false
+         titleContent: '{PREFIX}' 
+         subtitleContent: '&fTu comando es incorrecto!'
+         
+   ###############################   
+      
+   COMMAND_DELAY_RESTART:
+   # Placeholders: {0} = intervalo
+   # Ámbito: Usuario
+      chatMessage:
+         enabled: true
+         centered: false
+         content: 
+         - ''
+         - '{PREFIX} &f» &fReinicio retrasado. Reiniciando en &d{0}&f!'
+         - ''
+      actionbar:
+         enabled: false
+         content: '{PREFIX} &f» &fReinicio retrasado. &fReiniciando en &d{0}&f!' 
+      titles:
+         enabled: false
+         titleContent: '{PREFIX}' 
+         subtitleContent: '&fReinicio retrasado. Reiniciando en &d{0}&f!'
+         
+   COMMAND_DELAY_RESTART_GLOBAL:
+   # Placeholders: {0} = intervalo
+   # Ámbito: Global
+      chatMessage:
+         enabled: false
+         centered: false
+         content: 
+         - ''
+         - '{PREFIX} &f» &cUn administrador retrasó el reinicio. &fReiniciando en &d{0}&f!' 
+         - ''
+      actionbar:
+         enabled: true
+         content: '{PREFIX} &f» &cUn administrador retrasó el reinicio. &fReiniciando en &d{0}&f!' 
+      titles:
+         enabled: false
+         titleContent: '{PREFIX}' 
+         subtitleContent: '&fReiniciando en &d{0}&f!'
+         
+   COMMAND_DELAY_RESTART_INVALID:
+   # Placeholders: {0} = entrada
+   # Ámbito: Usuario
+      chatMessage:
+         enabled: true
+         centered: false
+         content: 
+         - ''
+         - ' {PREFIX} &f» &fNo se pudo retrasar el reinicio porque tu argumento de intervalo es incorrecto!'
+         - ''
+         - '  &dDetalles:'
+         - '  &7• &dTu argumento: &f{0}'
+         - '  &7• &dArgumento esperado: &fEntero positivo (e.g 60)'
+         - ''
+      actionbar:
+         enabled: false
+         content: '{PREFIX} &f» &fNo se pudo retrasar el reinicio porque tu argumento de intervalo es incorrecto!'
+      titles:
+         enabled: false
+         titleContent: '{PREFIX}' 
+         subtitleContent: '&fTu comando es incorrecto!'
+         
+   COMMAND_DELAY_RESTART_NOT_POSSIBLE:
+   # Placeholders: Ninguno
+   # Ámbito: Usuario
+      chatMessage:
+         enabled: true
+         centered: false
+         content: 
+         - ''
+         - ' {PREFIX} &f» &fNo se pudo retrasar el reinicio porque el reinicio está detenido!'
+         - ''
+      actionbar:
+         enabled: false
+         content: '{PREFIX} &f» &fNo se pudo retrasar el reinicio porque el reinicio está detenido!'
+      titles:
+         enabled: false
+         titleContent: '{PREFIX}' 
+         subtitleContent: '&fNo se pudo retrasar el reinicio!'         
+         
+   ###############################          
+         
+   COMMAND_STOP_RESTART:
+   # Placeholders: Ninguno
+   # Ámbito: Usuario
+      chatMessage:
+         enabled: true
+         centered: false
+         content: 
+         - ''
+         - '{PREFIX} &f» &fHas cancelado el reinicio automático!'
+         - ''
+      actionbar:
+         enabled: false
+         content: '{PREFIX} &f» &fHas cancelado el reinicio automático!' 
+      titles:
+         enabled: false
+         titleContent: '{PREFIX}' 
+         subtitleContent: '&fCancelado el reinicio automático!'
+         
+   COMMAND_STOP_RESTART_GLOBAL:
+   # Placeholders: Ninguno
+   # Ámbito: Global
+      chatMessage:
+         enabled: true
+         centered: false
+         content: 
+         - ''
+         - '{PREFIX} &f» &cUn administrador canceló el reinicio automático!' 
+         - ''
+      actionbar:
+         enabled: false
+         content: '{PREFIX} &f» &cUn administrador canceló el reinicio automático!' 
+      titles:
+         enabled: false
+         titleContent: '{PREFIX}' 
+         subtitleContent: '&fUn administrador canceló el reinicio!'
+         
+   COMMAND_STOP_RESTART_FAIL:
+   # Placeholders: Ninguno
+   # Ámbito: Usuario
+      chatMessage:
+         enabled: true
+         centered: false
+         content: 
+         - ''
+         - '{PREFIX} &f» &fNo se pudo cancelar el reinicio automático, no estaba en ejecución!'
+         - ''
+      actionbar:
+         enabled: false
+         content: '{PREFIX} &f» &fNo se pudo cancelar el reinicio automático, no estaba en ejecución!'
+      titles:
+         enabled: false
+         titleContent: '{PREFIX}' 
+         subtitleContent: '&fNo hay reinicio programado en ejecución!'
+         
+   ###############################  
+   
+   COMMAND_DEBUG_SUCCESS:
+   # Placeholders: {0} = Función de depuración
+   # Ámbito: Usuario
+      chatMessage:
+         enabled: true
+         centered: false
+         content: 
+         - ''
+         - ' {PREFIX} &f» &fEjecutando depuración para: &d&l{0}'
+         - ' &7(Asegúrate de que la función esté habilitada al hacer esto!)'
+         - ''
+      actionbar:
+         enabled: false
+         content: '{PREFIX} &f» &fEjecutando depuración para: &d&l{0}'
+      titles:
+         enabled: false
+         titleContent: '{PREFIX}' 
+         subtitleContent: '&fEjecutando depuración para: &d&l{0}'
+   
+   COMMAND_DEBUG_INVALID:
+   # Placeholders: {0} = Argumento
+   # Ámbito: Usuario
+      chatMessage:
+         enabled: true
+         centered: false
+         content: 
+         - ''
+         - ' {PREFIX} &f» &fNo se pudo usar el comando de depuración! Argumento faltante/incorrecto!'
+         - ''
+         - '  &dDetalles:'
+         - '  &7• &dTu argumento: &f{0}'
+         - '  &7• &dArgumento esperado: &fWebhook'
+         - ''
+      actionbar:
+         enabled: false
+         content: '{PREFIX} &f» &fNo se pudo usar el comando de depuración! Argumento faltante/incorrecto!'
+      titles:
+         enabled: false
+         titleContent: '{PREFIX}' 
+         subtitleContent: '&fNo se pudo usar el comando de depuración! Argumento faltante/incorrecto!'   
+         
+   ###############################
+           
+   COMMAND_RELOAD:
+   # Placeholders: {0} = ms
+   # Ámbito: Usuario
+      chatMessage:
+         enabled: true
+         centered: false
+         content: 
+         - ""
+         - "{PREFIX} &f» &fArchivos de configuración recargados. &7(&f{0}ms&7)"
+         - ""
+      actionbar:
+         enabled: false
+         content: "{PREFIX} &f» &fArchivos de configuración recargados. &7(&f{0}ms&7)" 
+      titles:
+         enabled: false
+         titleContent: '{PREFIX}' 
+         subtitleContent: '&fConfiguración recargada!'
+         
+   COMMAND_NOPERMISSION:
+   # Placeholders: Ninguno
+   # Ámbito: Usuario
+      chatMessage:
+         enabled: true
+         centered: false
+         content: 
+         - ''
+         - '{PREFIX} &f» &fNo tienes permiso para ejecutar este comando!'
+         - ''
+      actionbar:
+         enabled: false
+         content: "{PREFIX} &f» &fNo tienes permiso para ejecutar este comando!"       
+      titles:
+         enabled: false
+         titleContent: '{PREFIX}' 
+         subtitleContent: '&fNo tienes permiso!'   
